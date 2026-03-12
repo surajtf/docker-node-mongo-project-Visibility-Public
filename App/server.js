@@ -8,7 +8,7 @@ mongoose.connect("mongodb://mongodb:27017/test")
 .catch(err => console.log(err));
 
 app.get("/", (req, res) => {
-  res.send("Node + MongoDB + Docker Running");
+  res.send("Node + Mongo + Docker + CI/CD Working");
 });
 
 app.listen(3000, () => {
