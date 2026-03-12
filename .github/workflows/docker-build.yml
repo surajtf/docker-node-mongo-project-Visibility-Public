@@ -6,12 +6,11 @@ on:
       - main
 
 jobs:
-  build-and-push:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-
-      - name: Checkout code
+      - name: Checkout Code
         uses: actions/checkout@v4
 
       - name: Login to Docker Hub
@@ -21,7 +20,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build Docker Image
-        run: docker build -t surajrathore07/docker-node-mongo:latest .
+        run: docker build -t surajrathore07/docker-node-mongo .
 
       - name: Push Docker Image
-        run: docker push surajrathore07/docker-node-mongo:latest
+        run: docker push surajrathore07/docker-node-mongo
