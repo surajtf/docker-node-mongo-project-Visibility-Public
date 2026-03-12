@@ -1,0 +1,22 @@
+name: Node Mongo Docker CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Build Docker Image
+      run: docker build -t node-mongo-app .
+
+    - name: Run Container
+      run: docker run -d -p 3000:3000 node-mongo-app
