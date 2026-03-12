@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
       - name: Checkout Code
         uses: actions/checkout@v4
 
@@ -20,7 +21,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build Docker Image
-        run: docker build -t surajrathore07/docker-node-mongo .
+        run: docker build -t surajrathore07/docker-node-mongo:latest .
 
       - name: Push Docker Image
-        run: docker push surajrathore07/docker-node-mongo
+        run: docker push surajrathore07/docker-node-mongo:latest
